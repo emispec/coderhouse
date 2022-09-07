@@ -1,6 +1,7 @@
-import fs from "fs";
-import { products } from "./controllerProducts.js";
-export default class Container {
+const fs = require("fs");
+const { products } = require("./controllerProducts.js");
+
+module.exports = class Container {
   constructor(fileName) {
     this.fileName = fileName;
     this.objects = this.readData();
@@ -111,4 +112,4 @@ export default class Container {
       console.log(error);
     }
   }
-}
+};

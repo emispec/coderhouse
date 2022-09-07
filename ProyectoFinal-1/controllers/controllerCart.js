@@ -1,4 +1,4 @@
-import Container from "./container.js";
+const Container = require("./container.js");
 
 let admin;
 const carts = new Container("./data/carts.json");
@@ -63,4 +63,10 @@ const deleteProduct = (req, res) => {
   res.json({ message: "Producto eliminado" });
 };
 
-export { addCart, deleteCart, getProducts, addProductToCart, deleteProduct };
+module.exports = {
+  addCart,
+  deleteCart,
+  getProducts,
+  addProductToCart,
+  deleteProduct,
+};

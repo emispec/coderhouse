@@ -1,11 +1,12 @@
-import express from "express";
-import {
+const { Router } = require("express");
+const express = require("express");
+const {
   addCart,
   deleteCart,
   getProducts,
   addProductToCart,
   deleteProduct,
-} from "../controllers/controllerCart.js";
+} = require("../controllers/controllerCart.js");
 const routerCarts = express.Router();
 
 routerCarts.post("/", (req, res) => addCart(req, res));
@@ -20,4 +21,4 @@ routerCarts.delete("/:id/products/:id_prod", (req, res) =>
   deleteProduct(req, res)
 );
 
-export default routerCarts;
+module.exports = routerCarts;
