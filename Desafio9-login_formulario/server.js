@@ -21,7 +21,7 @@ const messages = new Container(optionsMariaDB, "messages");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-pp.use(
+app.use(
   session({
     store: MongoStore.create({
       mongoUrl: process.env.MONGOATLAS,
